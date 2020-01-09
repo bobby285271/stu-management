@@ -9,7 +9,7 @@ void cb_create_entry_addstu(GtkWidget *p_widget, gpointer data);   //添加学�
 void cb_create_entry_findstu(GtkWidget *p_widget, gpointer data);  //查询学生信息
 void cb_create_entry_delstu(GtkWidget *p_widget, gpointer data);   //删除学生信息
 void cb_create_entry_printstu(GtkWidget *p_widget, gpointer data); //导出学生信息
-int create_window(int argc, char **argv);                          //主菜单
+void create_window(int argc, char **argv);                         //主菜单
 
 int main(int argc, char **argv)
 {
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
   return 0;
 }
 
-int create_window(int argc, char **argv) //主菜单
+void create_window(int argc, char **argv) //主菜单
 {
   GtkWidget *p_window = NULL;
   GtkWidget *p_main_box = NULL; //用于放置文本和按钮
