@@ -9,6 +9,12 @@ typedef struct student_info
     struct student_info *next;
 } student_info;
 
+struct p_entry_set
+{
+    GtkWidget *p_entry1;
+    GtkWidget *p_entry2;
+} p_entry_set;
+
 extern student_info *p_stuinfo_head;
 
 student_info *init_student_info()
@@ -60,9 +66,10 @@ void delete_student_info(char *p_find_student_info)
         if (p_stuinfo->next)
             p_stuinfo = p_stuinfo->next;
     }
+    printf("删除完毕\n");
 }
 
-void print_student_info(GtkWidget *p_widget, gpointer data)
+void print_student_info()
 {
     freopen("data.out", "w", stdout);
     printf("学号  姓名\n");
@@ -72,17 +79,21 @@ void print_student_info(GtkWidget *p_widget, gpointer data)
         p_stuinfo = p_stuinfo->next;
         printf("%s %s\n", p_stuinfo->id, p_stuinfo->name);
     }
-    printf("导出完毕\n");
     fclose(stdout);
+    printf("导出完毕\n");    
 }
 
 void add_student_info_get_info(GtkWidget *widget, gpointer data)
 {
-    const gchar *entry_text;
-    entry_text = gtk_entry_get_text(GTK_ENTRY(data));
+    const gchar *entry_text1;
+    const gchar *entry_text2;
+    struct p_entry_set *temp = (struct p_entry_set *)data;
+    entry_text1 = gtk_entry_get_text(GTK_ENTRY(temp->p_entry1));
+    entry_text2 = gtk_entry_get_text(GTK_ENTRY(temp->p_entry2));
     char add_student_info_id[100];
     char add_student_info_name[100];
-    sscanf(entry_text, "%s %s", add_student_info_id, add_student_info_name);
+    sscanf(entry_text1, "%s", add_student_info_id);
+    sscanf(entry_text2, "%s", add_student_info_name);
     add_student_info(add_student_info_id, add_student_info_name);
 }
 
