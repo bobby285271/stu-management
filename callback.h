@@ -80,7 +80,7 @@ void print_student_info()
         printf("%s %s\n", p_stuinfo->id, p_stuinfo->name);
     }
     fclose(stdout);
-    printf("导出完毕\n");    
+    printf("导出完毕\n");
 }
 
 void add_student_info_get_info(GtkWidget *widget, gpointer data)
@@ -90,11 +90,7 @@ void add_student_info_get_info(GtkWidget *widget, gpointer data)
     struct p_entry_set *temp = (struct p_entry_set *)data;
     entry_text1 = gtk_entry_get_text(GTK_ENTRY(temp->p_entry1));
     entry_text2 = gtk_entry_get_text(GTK_ENTRY(temp->p_entry2));
-    char add_student_info_id[100];
-    char add_student_info_name[100];
-    sscanf(entry_text1, "%s", add_student_info_id);
-    sscanf(entry_text2, "%s", add_student_info_name);
-    add_student_info(add_student_info_id, add_student_info_name);
+    add_student_info(entry_text1, entry_text2);
 }
 
 void find_student_info_get_info(GtkWidget *widget, gpointer data)
