@@ -2,8 +2,6 @@
 
 写这个项目的主要目的，一个是应付（划掉）1 月 10 号就要截止 C 语言大作业，另一个是想借此入坑 GTK。
 
-**但不是学写文档！又不是没写过项目文档！** 我还没复习计导的啊啊啊啊啊啊啊
-
 > 为什么是 GTK 而不是 Qt：其实仅仅是因为我目前装了个 GNOME 桌面（逃）。
 
 ## 主要功能及实现的基本原理
@@ -32,8 +30,6 @@
   * `void add_student_info_get_info(GtkWidget *widget, gpointer data);`：添加学生信息（处理用户输入）
   * `void find_student_info_get_info(GtkWidget *widget, gpointer data);`：查询学生信息（处理用户输入）
   * `void delete_student_info_get_info(GtkWidget *widget, gpointer data);`：删除学生信息（处理用户输入）
-  
-  
 
 ## 编译与运行
 
