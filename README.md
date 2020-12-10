@@ -6,8 +6,6 @@
 
 ## 主要功能及实现的基本原理
 
-> 要不是我拖到 8 号才开工 ~~（绝对不是因为 8 号正好考完高数）~~ 估计会考虑使用 SQLite 实现吧。
-
 * 添加学生信息：用头插法将学生信息作为一个新的结点添加到链表中。
 * 查询学生信息：遍历链表，匹配结点信息，匹配则打印结点信息。
 * 删除学生信息：遍历链表，匹配结点信息，匹配则删除相关的结点。
@@ -21,7 +19,7 @@
   * `void cb_create_entry_delstu(GtkWidget *p_widget, gpointer data);`：删除学生信息（视图）
   * `void cb_create_entry_printstu(GtkWidget *p_widget, gpointer data);`：导出学生信息（视图）
   * `void create_window(int argc, char **argv);`：主菜单（视图）
-* `callback.h`：后台文件。
+* `callback.c`：后台文件。
   * `student_info *init_student_info();`：初始化（链表操作）
   * `void add_student_info(char *add_student_info_id, char *add_student_info_name);`：添加学生信息（链表操作）
   * `void find_student_info(char *p_find_student_info);`：查询学生信息（链表操作）

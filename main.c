@@ -1,5 +1,5 @@
 #include <gtk/gtk.h>
-#include "callback.h"
+#include "callback.c"
 
 //视图
 
